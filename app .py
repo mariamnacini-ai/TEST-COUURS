@@ -16,12 +16,13 @@ Lancement :
   -> http://127.0.0.1:5000
 """
 
-
 import sqlite3
 import hashlib
 import os
 from dotenv import load_dotenv
 from flask import Flask, request, render_template_string, redirect, make_response, g
+
+load_dotenv()
 
 app = Flask(__name__)
 secret_key = os.environ.get("SECRET_KEY")
