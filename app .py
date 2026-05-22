@@ -19,10 +19,14 @@ Lancement :
 import sqlite3
 import hashlib
 import os
+from dotenv import load_dotenv
 from flask import Flask, request, render_template_string, redirect, make_response, g
 
 app = Flask(__name__)
-app.secret_key = "MY-CODE-IS"  # secret en clair
+secret_key = os.environ.get("SECRET_KEY")
+if not secret_key:
+    raise RuntimeError("SECRET_KEY must be set in the environment (.env)")
+app.secret_key = secret_key
 DATABASE = "blog.db"
 
 
