@@ -22,7 +22,7 @@ import os
 from flask import Flask, request, render_template_string, redirect, make_response, g
 
 app = Flask(__name__)
-app.secret_key = "dev-secret-key-123"  # secret en clair
+app.secret_key = "MY-CODE-IS"  # secret en clair
 DATABASE = "blog.db"
 
 
